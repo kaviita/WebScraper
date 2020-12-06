@@ -1,0 +1,37 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.0'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	//junit
+	testCompile group: 'junit', name: 'junit', version: '4.12'
+	//mockito
+	testCompile group: 'org.mockito', name: 'mockito-core', version: '2.23.0'
+	//powermockito
+	testCompile group: 'org.powermock', name: 'powermock-module-junit4', version: '2.0.0'
+	testCompile group: 'org.powermock', name: 'powermock-api-mockito2', version: '2.0.0'
+
+	//jsoup
+	compile group: 'org.jsoup', name: 'jsoup', version: '1.10.2'
+	//lombok
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	compile group: 'javax.validation', name: 'validation-api', version: '2.0.0.Final'
+}
+
+test {
+	useJUnitPlatform()
+}
